@@ -15,8 +15,7 @@ services:
       - odoo-network
     ports:
       - "8069:8069"
-networks:
-  odoo-network:
+
 
   db:
     image: postgres:10
@@ -28,9 +27,12 @@ networks:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
     networks:
       - odoo-network
-
+networks:
+  odoo-network:
 
 volumes:
   web-data:
