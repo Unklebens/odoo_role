@@ -1,7 +1,7 @@
 Role Name: ODOO
 =========
 
-Deploy a odoo WITHOUT BDD
+Deploy a odoo 
 
 Requirements
 ------------
