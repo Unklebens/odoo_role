@@ -5,7 +5,7 @@ services:
     container_name: "odoo_web"
     restart: always
     environment:
-      - HOST=172.31.89.218
+      - HOST=db
       - USER={{ db_user }}
       - PASSWORD={{ db_pass }}
       - PORT=5432
@@ -18,5 +18,20 @@ services:
 networks:
   odoo-network:
 
+  db:
+    image: postgres:10
+    container_name: odoo_db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD={{ db_pass }}
+      - POSTGRES_USER={{ db_user }}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    networks:
+      - odoo-network
+
+
 volumes:
   web-data:
+  db-data:
