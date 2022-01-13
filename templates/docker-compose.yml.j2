@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    image: odoo:13.0
+    container_name: "odoo_web"
+    restart: always
+    environment:
+      - HOST=ClusterIPService____E
+      - USER={{ db_user }}
+      - PASSWORD={{ db_pass }}
+      - PORT=5432
+    volumes:
+      - web-data:/var/lib/odoo
+    networks:
+      - odoo-network
+networks:
+  odoo-network:
+
+volumes:
+  web-data:
+

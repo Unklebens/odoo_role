@@ -1,0 +1,4 @@
+---
+my_ansible_user: ubuntu
+db_user: odoo
+db_pass: odoo 

@@ -1,0 +1,9 @@
+---
+namespace: community
+name: odoo-role
+version: 1.0
+authors:
+  - Unklebens
+description: Install odoo
+repository: https://github.com/Unklebens/odoo_role.git
+ 
